@@ -1,27 +1,12 @@
 :root {
-  /*
-    Déclaration de variables CSS globales (accessibles partout dans le document).
-    On définit ici deux variables pour gérer les polices :
-    - --font-family-base : police utilisée pour le texte général
-    - --font-family-title : police utilisée pour les titres
-  */
   --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
-  /*
-    Application de la police de base (définie ci-dessus) à tout le corps du document.
-    Cela affecte tout le texte du site, sauf si une autre règle est plus spécifique.
-  */
   font-family: var(--font-family-base);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /*
-    Application d’une police spécifique aux titres (h1 à h6).
-    Cela permet d’avoir une distinction typographique entre le corps du texte et les titres,
-    même si ici les deux variables utilisent la même police pour l’instant.
-  */
   font-family: var(--font-family-title);
 }
