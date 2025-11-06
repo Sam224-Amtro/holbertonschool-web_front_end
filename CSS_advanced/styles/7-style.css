@@ -16,6 +16,11 @@
     --font-weight-bold: 700;
 }
 
+html {
+	scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
 body {
     color: var(--text-color);
     font-family: var(--font-family-base);
@@ -23,10 +28,11 @@ body {
     font-weight: var(--font-weight-regular);
 }
 
-html {
-	scroll-behavior: smooth;
-    font-size: 62.5%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
 }
+
 
   a {
     color: var(--text-color);
@@ -43,8 +49,3 @@ html {
   .section-tagline {
     color: var(--color-primary);
   }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-bold);
-}
