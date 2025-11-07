@@ -2,35 +2,26 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* ... contenu complet ... */
 
-
 :root {
-    /* Couleurs */
     --color-primary: #d73953;
     --color-black: #090909;
     --color-white: #ffffff;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
     --text-color: var(--color-black);
-
-    /* Polices */
-    --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
     --font-family-title: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    /* Tailles de texte */
     --font-size-small: 1.2rem;
     --font-size-medium: 1.6rem;
     --font-size-large: 1.8rem;
     --font-size-x-large: 2.3rem;
     --font-size-xx-large: 4.8rem;
-
-    /* Poids et interlignes */
     --font-weight-regular: 400;
     --font-weight-bold: 700;
     --line-height-small: 1.2;
     --line-height-base: 1.5;
     --line-height-big: 1.8;
-
-    /* Sections */
     --section-header-align: center;
     --section-tagline-transform: uppercase;
     --section-title-margin: 0;
@@ -40,12 +31,7 @@
     --section-body-padding: 0 0 3rem;
     --section-footer-padding: 3rem 0 0;
     --section-footer-align: center;
-    --section-tagline-margin: 0;
-
-    /* Footer */
     --footer-padding: 5rem 0 1rem;
-
-    /* Navigation */
     --nav-item-font-family: var(--font-family-title);
     --nav-item-font-weight: var(--font-weight-bold);
     --nav-item-font-size: var(--font-size-medium);
@@ -53,8 +39,7 @@
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
-
-    /* Boutons */
+    --section-tagline-margin: 0;
     --button-display: inline-block;
     --button-padding: 1.5rem 3rem;
     --button-border: 0.2rem solid var(--color-primary);
@@ -64,11 +49,14 @@
     --button-hover-color: var(--color-white);
     --button-hover-text-decoration: none;
     --button-hover-background: var(--color-primary);
+    --header-padding: 4rem 0 0;
+    --header-logo-position: relative;
+    --header-logo-link-display: inline-block;
+    --header-logo-link-position: absolute;
+    --header-logo-link-top: -1rem;
+    --header-logo-link-left: 0;
 }
 
-/* =========================================
-    RÈGLES GÉNÉRALES
-   ========================================= */
 *,
 *:before,
 *:after {
@@ -88,19 +76,28 @@ body {
     line-height: var(--line-height-base);
 }
 
-/* =========================================
-    THÈME SOMBRE
-   ========================================= */
+.header {
+    padding: var(--header-padding);
+}
+
+.header-logo {
+    position: var(--header-logo-position);
+}
+
+.header-logo a {
+    display: var(--header-logo-link-display);
+    position: var(--header-logo-link-position);
+    top: var(--header-logo-link-top);
+    left: var(--header-logo-link-left);
+}
+
 [data-section-theme="dark"] {
     --text-color: var(--color-white);
     --section-title-color: var(--color-white);
-    --button-color: var(--color-white);
     background-color: var(--color-black);
+    --button-color: var(--color-white);
 }
 
-/* =========================================
-    NAVIGATION
-   ========================================= */
 .navbar-menu {
     float: right;
 }
@@ -130,10 +127,12 @@ body {
     color: var(--nav-item-link-hover);
 }
 
-/* =========================================
-    TYPOGRAPHIE ET LIENS
-   ========================================= */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-family-title);
     font-weight: var(--font-weight-bold);
 }
@@ -155,9 +154,6 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
-/* =========================================
-    SECTION HERO
-   ========================================= */
 .section-hero {
     background-size: 90rem auto;
 }
@@ -170,9 +166,6 @@ a:active {
     padding: 10rem 40rem 2rem 0;
 }
 
-/* =========================================
-    BOUTONS
-   ========================================= */
 .button {
     display: var(--button-display);
     padding: var(--button-padding);
@@ -188,21 +181,23 @@ a:active {
     background: var(--button-hover-background);
 }
 
-/* =========================================
-    ACCESSIBILITÉ
-   ========================================= */
 .visually-hidden {
     display: none;
 }
 
-/* =========================================
-    CARTES
-   ========================================= */
 .card-category {
     color: var(--color-primary);
 }
 
-/* --- Services --- */
+.section {
+    padding: var(--section-padding);
+}
+
+.section-header {
+    text-align: var(--section-header-align);
+    padding: var(--section-header-padding);
+}
+
 .card-services .card-title {
     margin: 0;
 }
@@ -219,7 +214,6 @@ a:active {
     text-decoration: none;
 }
 
-/* --- Témoignages --- */
 .card-testimonial {
     text-align: center;
 }
@@ -236,18 +230,6 @@ a:active {
     color: var(--color-primary);
 }
 
-/* =========================================
-    STRUCTURE DES SECTIONS
-   ========================================= */
-.section {
-    padding: var(--section-padding);
-}
-
-.section-header {
-    text-align: var(--section-header-align);
-    padding: var(--section-header-padding);
-}
-
 .section-body {
     padding: var(--section-body-padding);
 }
@@ -257,7 +239,6 @@ a:active {
     text-align: var(--section-footer-align);
 }
 
-/* --- Titres et sous-titres --- */
 .section-title {
     font-family: var(--font-family-title);
     font-size: var(--font-size-xx-large);
@@ -274,9 +255,6 @@ a:active {
     margin: var(--section-tagline-margin);
 }
 
-/* =========================================
-    GRILLE & LAYOUT
-   ========================================= */
 .row::after {
     content: "";
     display: table;
@@ -308,15 +286,8 @@ ul.row {
     margin-right: auto;
 }
 
-/* =========================================
-    PIED DE PAGE
-   ========================================= */
 .footer {
     padding: var(--footer-padding);
-}
-
-.footer-address {
-    color: var(--text-color);
 }
 
 .footer-copyright {
@@ -329,13 +300,14 @@ ul.row {
     text-align: right;
 }
 
-/* =========================================
-    RÉSEAUX SOCIAUX
-   ========================================= */
+.footer-address {
+    color: var(--text-color);
+}
+
 .social-link {
     display: block;
 }
 
-.social-link > svg {
+.social-link>svg {
     fill: var(--text-color);
 }
