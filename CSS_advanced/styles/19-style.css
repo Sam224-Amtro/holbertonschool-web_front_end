@@ -1,11 +1,16 @@
-/* ================================
-   ROOT VARIABLES
-================================ */
+/* === Normalize CSS === */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* ... contenu complet ... */
+
+/* === Custom Styles from 13-style.css === */
+
+
 * {
     box-sizing: border-box;
 }
 
 :root {
+    /* Colors */
     --color-primary: #d73953;
     --color-black: #090909;
     --color-white: #ffffff;
@@ -13,9 +18,9 @@
     --color-dark-grey: #353535;
     --text-color: var(--color-black);
 
-    --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+    /* Fonts */
+    --font-family-base: 'Open Sans', sans-serif;
+    --font-family-title: 'Raleway', sans-serif;
     --font-size-small: 1.2rem;
     --font-size-medium: 1.6rem;
     --font-size-large: 1.8rem;
@@ -24,25 +29,26 @@
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 
-    --font-family-base: 'Open Sans', sans-serif;
-    --font-family-title: 'Raleway', sans-serif;
-
+    /* Line heights */
     --line-height-small: 1.2;
     --line-height-base: 1.5;
     --line-height-big: 1.8;
 
+    /* Section settings */
     --section-header-align: center;
     --section-tagline-transform: uppercase;
     --section-title-margin: 0;
     --section-title-color: var(--color-black);
-
     --section-padding: 5rem 0;
     --section-header-padding: 0 0 3rem;
     --section-body-padding: 0 0 3rem;
     --section-footer-padding: 3rem 0 0;
     --section-footer-align: center;
+
+    /* Footer settings */
     --footer-padding: 5rem 0 1rem;
 
+    /* Navigation items */
     --nav-item-font-family: var(--font-family-title);
     --nav-item-font-weight: var(--font-weight-bold);
     --nav-item-font-size: var(--font-size-medium);
@@ -51,7 +57,15 @@
     --nav-item-margin: 3rem 0 0 0;
     --nav-item-link-hover: var(--color-primary);
 
+    /* Section tagline */
     --section-tagline-margin: 0;
+}
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+html {
+    font-size: 62.5%;
 }
 
 body {
@@ -62,19 +76,43 @@ body {
     line-height: var(--line-height-base);
 }
 
-html {
-    font-size: 62.5%;
+a {
+    color: var(--text-color);
+    text-decoration: none;
 }
 
-.navbar-menu {
-    float: right;
+a[href] {
+    font-style: normal;
 }
 
+a[href]:visited {
+    font-style: italic;
+}
+
+a[href]:hover {
+    text-decoration: underline;
+}
+
+a[href]:active {
+    background-color: var(--color-light-grey);
+}
+
+.visually-hidden {
+    display: none;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
 nav {
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
+}
+
+.navbar-menu {
+    float: right;
 }
 
 nav .nav-item {
@@ -95,17 +133,12 @@ nav .nav-link:hover {
     color: var(--nav-item-link-hover);
 }
 
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.visually-hidden {
-    display: none;
-}
-
-.card-category {
-    color: var(--color-primary);
+/* ================================
+   TYPOGRAPHY
+================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
 }
 
 .section-tagline {
@@ -115,14 +148,13 @@ a {
     margin: var(--section-tagline-margin);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-bold);
-}
-
+/* ================================
+   SECTIONS
+================================ */
 .section {
     padding: var(--section-padding);
 }
+
 .section-header {
     text-align: var(--section-header-align);
     padding: var(--section-header-padding);
@@ -145,31 +177,37 @@ h1, h2, h3, h4, h5, h6 {
     text-align: var(--section-footer-align);
 }
 
+/* ================================
+   FOOTER
+================================ */
 .footer {
     padding: var(--footer-padding);
 }
 
-a[href] {
-    font-style: normal;
+.footer-copyright {
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--text-color);
 }
 
-a[href]:visited {
-    font-style: italic;
+.footer ul {
+    text-align: right;
 }
 
-a[href]:hover {
-    text-decoration: underline;
+/* ================================
+   CARDS
+================================ */
+.card-category {
+    color: var(--color-primary);
 }
 
-a[href]:active {
-    background-color: var(--color-light-grey);
-}
-
+/* ================================
+   GRID / LAYOUT
+================================ */
 .container {
     width: 960px;
     margin: 0 auto;
 }
-
 
 ul.row {
     margin: 0;
@@ -187,14 +225,4 @@ ul.row {
     width: 50%;
     float: left;
     padding: 0.5rem;
-}
-
-.footer-copyright {
-    margin: 0;
-    font-size: var(--font-size-small);
-    color: var(--text-color);
-}
-
-.footer ul {
-    text-align: right;
 }
